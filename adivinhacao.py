@@ -1,14 +1,15 @@
+import random
 print("***************************************")
 print("Bem vindo ao jogo de Adivinhação!")
 print("***************************************")
 
-numero_secreto = 20
+numero_secreto = random.randrange(1, 101)
 maximo_tentativas = 3
 rodada = 1
 
-while(rodada <= maximo_tentativas):
+for rodada in range(1, maximo_tentativas + 1 ):
     print("Tentativa {} de {}".format(rodada, maximo_tentativas))
-    chute = int(input("Digite o seu numero:"))
+    chute = int(input("Digite o seu numero entre 1 e 100:"))
     print("Você digitou o número", chute)
     acertou = numero_secreto == chute
     maior   = numero_secreto < chute
@@ -23,5 +24,4 @@ while(rodada <= maximo_tentativas):
             print("Seu chute foi maior que o número.")
         elif(menor):
             print("Seu chute foi menor que o número.")
-    rodada = rodada + 1
 print("Fim de jogo.")
